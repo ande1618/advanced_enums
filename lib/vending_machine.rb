@@ -23,4 +23,15 @@ attr_reader :inventory
   end
 
   def inventory_by_alphabet
+    inventory.group_by do |snack|
+      snack.name.chr
+    end
+  end
+
+  def total_num_items
+    inventory.each do |snack|
+      snack.quantity
+    end
+  end
+
 end
