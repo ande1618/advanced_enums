@@ -11,8 +11,6 @@ attr_reader :inventory
   end
 
   def snacks_by_name
-    inventory.each do
-      
-    end
+    inventory.fetch(0)
   end
 end
