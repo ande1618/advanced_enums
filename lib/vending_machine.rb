@@ -11,6 +11,16 @@ attr_reader :inventory
   end
 
   def snacks_by_name
-    inventory.fetch(0)
+    inventory.map do |snack|
+      snack.name
+    end
   end
+
+  def how_many_snacks
+    inventory.group_by do |snack|
+      snack.quantity
+    end
+  end
+
+  def inventory_by_alphabet
 end
